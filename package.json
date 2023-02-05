@@ -31,5 +31,10 @@
 		"vite": "^4.0.0",
 		"vitest": "^0.25.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"firebase": "^9.17.1",
+		"svelte-kit": "^1.2.0",
+		"sveltestrap": "^5.10.0"
+	}
 }

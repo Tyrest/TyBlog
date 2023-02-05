@@ -1,2 +1,33 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import Counter from '$lib/components/Counter.svelte';
+	import PostView from '$lib/components/PostView.svelte';
+</script>
+
+<svelte:head>
+	<title>Home</title>
+	<meta name="description" content="Tyler's Blog" />
+</svelte:head>
+
+<section>
+	<h1>
+		Hello, World!
+	</h1>
+
+	<p>
+		This is just a place for me to document my journey as a developer.
+	</p>
+
+	<PostView />
+	
+	<Counter />
+</section>
+
+<style>
+	section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		flex: 0.6;
+	}
+</style>
