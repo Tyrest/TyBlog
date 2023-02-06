@@ -15,7 +15,7 @@
 		Hello,
 		{#if $authStore.isLoggedIn}
 			{#if $authStore.user}
-				{$authStore.user.displayName}!
+				{@html $authStore.user.displayName}!
 			{/if}
 		{:else}
 			World!

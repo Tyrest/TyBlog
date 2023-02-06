@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Row, Col, Button } from 'sveltestrap';
+	import { Button } from 'sveltestrap';
 	import firebase from 'firebase/compat/app';
 
 	async function googleLogIn() {

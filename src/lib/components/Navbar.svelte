@@ -13,7 +13,7 @@
 		});
 	}
 
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 	let atTop = true;
 	let scrolledUp = false;
 	onMount(() => {
@@ -28,7 +28,7 @@
 			if (window.pageYOffset === 0) {
 				atTop = true;
 				scrolledUp = false;
-			} else if (window.pageYOffset > 74) {
+			} else if (window.pageYOffset > 75) {
 				atTop = false;
 			}
 
@@ -36,14 +36,15 @@
 		};
 
 		return () => {
-            window.onscroll = () => {};
-        };
+			window.onscroll = () => {};
+		};
 	});
 </script>
 
 <Navbar
 	id="mainNav"
-	class="navbar-light fixed-top {atTop ? '' : 'navbar-is-fixed'} {scrolledUp ? 'navbar-is-visible' : ''}"
+	class="fixed-top {atTop ? '' : 'navbar-is-fixed'}
+        {scrolledUp ? 'navbar-is-visible' : ''}"
 	light
 	expand="md"
 	container
@@ -63,10 +64,10 @@
 			<NavItem><NavLink href="/">Home</NavLink></NavItem>
 			<NavItem><NavLink href="/about">About</NavLink></NavItem>
 			<NavItem><NavLink href="/contact">Contact</NavLink></NavItem>
-			<NavItem><NavLink href="/post">Blog</NavLink></NavItem>
+			<NavItem><NavLink href="/blog/create">Blog</NavLink></NavItem>
 			<NavItem>
 				{#if $authStore.user}
-					<Button outline on:click={logOut} color="light" class="m-2">Logout</Button>
+					<Button outline on:click={logOut} color="light">Logout</Button>
 				{:else}
 					<NavLink href="/auth/login">Login</NavLink>
 				{/if}
@@ -88,8 +89,8 @@
 
 	:global(#mainNav.navbar-is-fixed) {
 		position: fixed;
-		top: -74px;
-		transition: transform 0.2s ease;
+		top: -75px;
+		transition: transform 0.2s;
 		background-color: var(--color-bg-0);
 	}
 
@@ -107,5 +108,10 @@
 		font-weight: 600;
 		font-size: 1.5rem;
 		color: white;
+	}
+
+	:global(.navbar .nav-item .btn) {
+		font-weight: 600;
+		font-size: 1.5rem;
 	}
 </style>
