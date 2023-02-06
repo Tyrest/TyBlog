@@ -1,12 +1,13 @@
-<script>
+<script lang="ts">
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import './styles.css';
 
-	import firebase from 'firebase/app';
-	import 'firebase/auth';
+	import firebase from 'firebase/compat/app';
+	import 'firebase/compat/auth';
 	import { onMount } from 'svelte';
+	import authStore from '$lib/stores/authStore';
 
 	onMount(() => {
 		const firebaseConfig = {
@@ -20,6 +21,14 @@
 		};
 
 		firebase.initializeApp(firebaseConfig);
+
+		firebase.auth().onAuthStateChanged((user) => {
+			authStore.set({
+				isLoggedIn: user !== null,
+				user,
+				firebaseControlled: true
+			});
+		});
 	});
 </script>
 
@@ -40,6 +49,7 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+		background-color: var(--color-bg-0);
 	}
 
 	main {

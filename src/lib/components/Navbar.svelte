@@ -1,3 +1,19 @@
+<script>
+	import authStore from '$lib/stores/authStore';
+	import firebase from 'firebase/compat/app';
+	import { Button } from 'sveltestrap';
+	import Login from './Login.svelte';
+
+	async function logOut() {
+		await firebase.auth().signOut();
+		authStore.set({
+			isLoggedIn: false,
+			user: null,
+			firebaseControlled: true
+		});
+	}
+</script>
+
 <nav id="mainNav" class="navbar navbar-light navbar-expand-lg fixed-top">
 	<div class="container">
 		<a class="navbar-brand" href="#top">TyBlog</a><button
@@ -14,7 +30,13 @@
 				<li class="nav-item"><a class="nav-link" href="/about">About</a></li>
 				<li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
 				<li class="nav-item"><a class="nav-link" href="/post">Blog</a></li>
-                <li class="nav-item"><a class="nav-link" href="/auth/login">Login</a></li>
+				<li class="nav-item">
+					{#if $authStore.user}
+						<Button outline on:click={logOut} color="light" class="m-2">Logout</Button>
+					{:else}
+						<a class="nav-link" href="/auth/login">Login</a>
+					{/if}
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -28,11 +50,14 @@
 		color: white;
 	}
 
+	nav.navbar .nav-item {
+		padding-left: 2rem;
+	}
+
 	nav.navbar .nav-link {
 		font-family: var(--font-mono);
 		font-weight: 600;
 		font-size: 1.5rem;
 		color: white;
-		padding-left: 2rem;
 	}
 </style>

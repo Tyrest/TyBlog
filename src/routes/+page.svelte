@@ -1,6 +1,8 @@
 <script>
 	import Counter from '$lib/components/Counter.svelte';
 	import PostView from '$lib/components/PostView.svelte';
+
+	import authStore from '$lib/stores/authStore';
 </script>
 
 <svelte:head>
@@ -10,15 +12,20 @@
 
 <section>
 	<h1>
-		Hello, World!
+		Hello,
+		{#if $authStore.isLoggedIn}
+			{#if $authStore.user}
+				{$authStore.user.displayName}!
+			{/if}
+		{:else}
+			World!
+		{/if}
 	</h1>
 
-	<p>
-		This is just a place for me to document my journey as a developer.
-	</p>
+	<p>This is just a place for me to document my journey as a developer.</p>
 
 	<PostView />
-	
+
 	<Counter />
 </section>
 

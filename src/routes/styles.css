@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'Ubuntu Mono';
-	src: url('%sveltekit.assets%/fonts/UbuntuMono-Regular.ttf') format('truetype');
+	src: url('/fonts/UbuntuMono-Regular.ttf') format('truetype');
 }
 
 :root {
@@ -13,11 +13,12 @@
 	--color-text: white;
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
+	--bs-body-color: var(--color-text);
 	font-family: var(--font-mono);
 	color: var(--color-text);
 }
 
-body {
+.app {
 	min-height: 100vh;
 	margin: 0;
 	background-attachment: fixed;
@@ -31,22 +32,13 @@ body {
 	color: var(--color-text);
 }
 
-h1,
-h2,
-p {
-	font-weight: 400;
-}
-
-p {
-	line-height: 1.5;
-}
-
-a {
+.app a {
 	color: var(--color-theme-1);
 	text-decoration: none;
 }
 
-a:hover {
+.app a:hover {
+	color: var(--color-theme-1);
 	text-decoration: underline;
 }
 

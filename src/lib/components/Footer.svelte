@@ -34,4 +34,8 @@
 		font-weight: 600;
 		font-size: 1rem;
 	}
+
+	footer a {
+		color: var(--color-theme-1)
+	}
 </style>
