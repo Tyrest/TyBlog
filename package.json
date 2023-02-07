@@ -33,6 +33,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/adapter-static": "^2.0.0",
 		"firebase": "^9.17.1",
 		"svelte-kit": "^1.2.0",
 		"sveltestrap": "^5.10.0"

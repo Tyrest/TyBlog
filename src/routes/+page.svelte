@@ -12,7 +12,7 @@
 
 <section>
 	<h1>
-		Hello,
+		Hello
 		{#if $authStore.isLoggedIn}
 			{#if $authStore.user}
 				{@html $authStore.user.displayName}!

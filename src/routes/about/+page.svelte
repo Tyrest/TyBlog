@@ -18,9 +18,4 @@
 		the ease of use and the performance of the framework. This is my first foray into Svelte and webdev
 		as a whole so this blog will most likely be a permanent work in progress.
 	</p>
-
-	<p>
-		The <a href="/sverdle">Sverdle</a> page illustrates SvelteKit's data loading and form handling. Try
-		using it with JavaScript disabled!
-	</p>
 </div>

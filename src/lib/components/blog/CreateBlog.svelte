@@ -15,7 +15,7 @@
 	<h2>Markdown Content</h2>
 	<Form>
 		<textarea class="form-control" placeholder="Enter some content" rows="8" />
-		<Button block color="primary">Create</Button>
+		<Button color="primary">Create</Button>
 	</Form>
 </div>
 
