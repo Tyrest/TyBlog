@@ -1,5 +1,5 @@
 <script>
-	import GoogleLogin from '$lib/components/GoogleLogin.svelte';
+	import GoogleLogin from '$lib/components/auth/GoogleLogin.svelte';
 </script>
 
 <GoogleLogin />

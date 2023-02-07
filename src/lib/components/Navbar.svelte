@@ -65,13 +65,18 @@
 			<NavItem><NavLink href="/about">About</NavLink></NavItem>
 			<NavItem><NavLink href="/contact">Contact</NavLink></NavItem>
 			<NavItem><NavLink href="/blog/create">Blog</NavLink></NavItem>
-			<NavItem>
-				{#if $authStore.user}
+			{#if $authStore.user}
+				<NavItem>
+					<NavLink href="/profile/{$authStore.user.uid}">Profile</NavLink>
+				</NavItem>
+				<NavItem>
 					<Button outline on:click={logOut} color="light">Logout</Button>
-				{:else}
+				</NavItem>
+			{:else}
+				<NavItem>
 					<NavLink href="/auth/login">Login</NavLink>
-				{/if}
-			</NavItem>
+				</NavItem>
+			{/if}
 		</Nav>
 	</div>
 </Navbar>

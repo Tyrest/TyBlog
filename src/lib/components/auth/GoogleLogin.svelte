@@ -1,12 +1,26 @@
 <script lang="ts">
 	import { Button } from 'sveltestrap';
 	import firebase from 'firebase/compat/app';
+	import { setDoc } from 'firebase/firestore/lite';
+	import { userDoc } from '$lib/Firebase.js';
+	import { goto } from '$app/navigation';
 
 	async function googleLogIn() {
 		try {
 			const provider = new firebase.auth.GoogleAuthProvider();
 
-			await firebase.auth().signInWithPopup(provider);
+			let user = await firebase.auth().signInWithPopup(provider);
+
+			if (user.user) {
+				await setDoc(userDoc(user.user.uid), {
+					username: user.user.displayName,
+					email: user.user.email,
+				});
+
+				goto('/');
+			} else {
+				console.log('No user');
+			}
 		} catch (error) {
 			console.log(error);
 		}

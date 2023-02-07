@@ -24,7 +24,7 @@
 
 	<p>This is just a place for me to document my journey as a developer.</p>
 
-	<PostView />
+	<!-- <PostView /> -->
 
 	<Counter />
 </section>

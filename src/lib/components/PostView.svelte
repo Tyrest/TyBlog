@@ -1,54 +1,27 @@
-<div class="post-view">
-	<div class="container">
-		<div class="row">
-			<div class="col">
-				<h1>Previous Posts</h1>
-				<hr />
-				<div class="post-preview">
-					<a href="/">
-						<h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-						<h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
-					</a>
-					<p class="post-meta">Posted by <a href="/">Start Bootstrap on September 24, 2018</a></p>
-				</div>
-				<hr />
-				<div class="post-preview">
-					<a href="/">
-						<h2 class="post-title">
-							I believe every human has a finite number of heartbeats. I don&#39;t intend to waste
-							any of mine.
-						</h2>
-					</a>
-					<p class="post-meta">Posted by <a href="/">Start Bootstrap on September 18, 2018</a></p>
-				</div>
-				<hr />
-				<div class="post-preview">
-					<a href="/">
-						<h2 class="post-title">Science has not yet mastered prophecy</h2>
-						<h3 class="post-subtitle">
-							We predict too much for the next year and yet far too little for the next ten.
-						</h3>
-					</a>
-					<p class="post-meta">Posted by <a href="/">Start Bootstrap on August 24, 2018</a></p>
-				</div>
-				<hr />
-				<div class="post-preview">
-					<a href="/">
-						<h2 class="post-title">Failure is not an option</h2>
-						<h3 class="post-subtitle">
-							Many say exploration is part of our destiny, but it's actually our duty to future
-							generations.
-						</h3>
-					</a>
-					<p class="post-meta">Posted by <a href="/">Start Bootstrap on July 8, 2018</a></p>
-				</div>
-				<hr />
-			</div>
-		</div>
-	</div>
-</div>
+<script lang="ts">
+	import { Container } from 'sveltestrap';
+	import type { DocumentData } from 'firebase/firestore/lite';
 
-<style>
+	export let header: string;
+	export let data: { id: string; data: () => DocumentData; }[];
+</script>
+
+<Container class="post-view">
+	<h1>{header}</h1>
+	<hr />
+	{#each data as post}
+		<div class="post-preview">
+			<a href="/blog/{post.id}">
+				<h2 class="post-title">{post.data().title}</h2>
+				<h3 class="post-subtitle">{post.data().subtitle}</h3>
+			</a>
+			<p class="post-meta">Posted by <a href="/profile/{post.data().owner}">{post.data().owner}</a> on {post.data().timestamp}</p>
+		</div>
+		<hr />
+	{/each}
+</Container>
+
+<!-- <style>
 	.post-view {
 		font-family: var(--font-mono);
 		font-weight: 600;
@@ -65,4 +38,4 @@
 	/* .post-preview a {
 		color: var(--color-text);
 	} */
-</style>
+</style> -->
