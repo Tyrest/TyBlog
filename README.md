@@ -1,38 +1,9 @@
-# create-svelte
+# TyBlog
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This site is my first foray into webdev (other than simple html files) and serves the purpose of giving me a platform to document my journey as a developer! I will probably be writing short posts for this site simply to keep up with my personal projects and what technolgies I might be interested in at any moment.
 
-## Creating a project
+## Technologies
 
-If you're seeing this, you've probably already done this step. Congrats!
+This project uses Svelte for the frontend and is hosted on Firebase. I chose Svelte because it seemed like the most beginner-friendly frontend framework as well as being ranked among the most loved frameworks in the State of JavaScript survey. I chose Firebase because even though there are a lot of other options available, Firebase's free-tier is incredible.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+[Link to Website](https://tyblog-2e646.web.app/)
