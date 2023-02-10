@@ -5,6 +5,10 @@
 	import { addDoc, serverTimestamp } from 'firebase/firestore/lite';
 	import authStore from '$lib/stores/authStore';
 	import { blogCollection } from '$lib/Firebase.js';
+	import headerData from '$lib/stores/headerData';
+
+	$headerData.title = 'Create Post';
+	$headerData.subtitle = 'Create a new blog post';
 
 	async function createBlog(event: CustomEvent<{ title: string, subtitle: string, content: string }>) {
 		if (!$authStore.isLoggedIn) {

@@ -3,6 +3,12 @@
 	import PostView from '$lib/components/PostView.svelte';
 	import { Container } from 'sveltestrap';
 	import type { PageData } from './$types';
+	import headerData from '$lib/stores/headerData';
+	import background from '$lib/images/blurry-gradient-haikei.svg';
+
+	$headerData.title = "TyBlog";
+	$headerData.subtitle = "A home for Tyler's thoughts";
+	$headerData.background = background;
 
 	export let data: PageData;
 </script>

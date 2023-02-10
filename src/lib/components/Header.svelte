@@ -1,18 +1,19 @@
 <script>
-    import background from '$lib/images/blurry-gradient-haikei.svg';
+	import { Container, Row, Col } from 'sveltestrap';
+	import headerData from '$lib/stores/headerData';
 </script>
 
-<header class="masthead" style="background-image: url({background});">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-10 col-lg-8 mx-auto position-relative">
+<header class="masthead" style="background-image: url({$headerData.background});">
+	<Container class="text-center">
+		<Row>
+			<Col md="10" lg="8" class="mx-auto position-relative">
 				<div class="site-heading">
-					<h1>TyBlog</h1>
-					<span class="subheading">A home for Tyler's thoughts</span>
+					<h1>{$headerData.title}</h1>
+					<span class="subheading">{$headerData.subtitle}</span>
 				</div>
-			</div>
-		</div>
-	</div>
+			</Col>
+		</Row>
+	</Container>
 </header>
 
 <style>

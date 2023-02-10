@@ -4,6 +4,10 @@
     import AdminButtons from '$lib/components/blog/AdminButtons.svelte';
 	import GoogleLogin from '$lib/components/auth/GoogleLogin.svelte';
 	import authStore from '$lib/stores/authStore';
+    import headerData from '$lib/stores/headerData';
+
+	$headerData.title = 'Admin';
+	$headerData.subtitle = 'Manage your blog posts';
 
 	import type { PageData } from './$types';
 
