@@ -10,13 +10,13 @@
 	<h1>{header}</h1>
 	<hr />
 	{#each data as post}
-		<div class="post-preview">
+		<Container class="post-preview">
 			<a href="/blog/{post.id}">
 				<h2 class="post-title">{post.data().title}</h2>
-				<h3 class="post-subtitle">{post.data().subtitle}</h3>
+				<p class="post-subtitle">{post.data().subtitle}</p>
 			</a>
-			<p class="post-meta">Posted by <a href="/profile/{post.data().owner}">{post.data().owner}</a> on {post.data().timestamp}</p>
-		</div>
+			<p class="post-meta text-muted">Posted on {post.data().timestamp.toDate().toString().substring(4, 10)}</p>
+		</Container>
 		<hr />
 	{/each}
 </Container>

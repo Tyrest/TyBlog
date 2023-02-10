@@ -11,10 +11,15 @@
 			console.error('User not logged in');
 			return;
 		} else {
-			console.log({ ...event.detail, owner: $authStore.user, timestamp: serverTimestamp() });
-			const docRef = await addDoc(blogCollection, {...event.detail, owner: $authStore.user?.uid, timestamp: serverTimestamp()});
-			console.log('Document written with ID: ', docRef.id);
-			goto('/blog/' + docRef.id);
+			if ($authStore.user?.uid != 'sqcpOdEU7QaniA4E5BPbu8YCiwS2') {
+				console.error('User not authorized');
+				return;
+			} else {
+				console.log({ ...event.detail, owner: $authStore.user, timestamp: serverTimestamp() });
+				const docRef = await addDoc(blogCollection, {...event.detail, owner: $authStore.user?.uid, timestamp: serverTimestamp()});
+				console.log('Document written with ID: ', docRef.id);
+				goto('/blog/' + docRef.id);
+			}
 		}
 	}
 </script>

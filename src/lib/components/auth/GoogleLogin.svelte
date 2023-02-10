@@ -17,7 +17,7 @@
 					email: user.user.email,
 				});
 
-				goto('/');
+				goto('/admin');
 			} else {
 				console.log('No user');
 			}

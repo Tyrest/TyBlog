@@ -63,18 +63,13 @@
 		<Nav class="ms-auto" navbar>
 			<NavItem><NavLink href="/">Home</NavLink></NavItem>
 			<NavItem><NavLink href="/about">About</NavLink></NavItem>
-			<NavItem><NavLink href="/contact">Contact</NavLink></NavItem>
 			<NavItem><NavLink href="/blog/create">Blog</NavLink></NavItem>
 			{#if $authStore.user}
 				<NavItem>
-					<NavLink href="/profile/{$authStore.user.uid}">Profile</NavLink>
+					<NavLink href="/admin">Admin</NavLink>
 				</NavItem>
 				<NavItem>
 					<Button outline on:click={logOut} color="light">Logout</Button>
-				</NavItem>
-			{:else}
-				<NavItem>
-					<NavLink href="/auth/login">Login</NavLink>
 				</NavItem>
 			{/if}
 		</Nav>
