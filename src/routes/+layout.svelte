@@ -37,7 +37,7 @@
 
 	<Header />
 
-	<main>
+	<main id="main">
 		<slot />
 	</main>
 

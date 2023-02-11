@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { Container } from 'sveltestrap';
+	import { Container, FormCheck } from 'sveltestrap';
 	import CreateBlog from '$lib/components/blog/CreateBlog.svelte';
 	import { addDoc, serverTimestamp } from 'firebase/firestore/lite';
 	import authStore from '$lib/stores/authStore';

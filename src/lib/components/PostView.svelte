@@ -3,10 +3,10 @@
 	import type { DocumentData } from 'firebase/firestore/lite';
 
 	export let header: string;
-	export let data: { id: string; data: () => DocumentData; }[];
+	export let data: { id: string; data: () => DocumentData }[] = [];
 </script>
 
-<Container class="post-view">
+<Container id="posts" class="post-view">
 	<h1>{header}</h1>
 	<hr />
 	{#each data as post}
@@ -15,7 +15,9 @@
 				<h2 class="post-title">{post.data().title}</h2>
 				<p class="post-subtitle">{post.data().subtitle}</p>
 			</a>
-			<p class="post-meta text-muted">Posted on {post.data().timestamp.toDate().toString().substring(4, 10)}</p>
+			<p class="post-meta text-muted">
+				Posted on {post.data().timestamp.toDate().toString().substring(4, 10)}
+			</p>
 		</Container>
 		<hr />
 	{/each}

@@ -63,7 +63,7 @@
 		<Nav class="ms-auto" navbar>
 			<NavItem><NavLink href="/">Home</NavLink></NavItem>
 			<NavItem><NavLink href="/about">About</NavLink></NavItem>
-			<NavItem><NavLink href="/blog/create">Blog</NavLink></NavItem>
+			<NavItem><NavLink href="/blog">Blog</NavLink></NavItem>
 			{#if $authStore.user}
 				<NavItem>
 					<NavLink href="/admin">Admin</NavLink>
@@ -99,6 +99,12 @@
 		font-size: 2rem;
 		color: white;
 	}
+	
+	:global(.navbar .navbar-brand:hover) {
+		color: white;
+		text-decoration: underline;
+		scale: 1;
+	}
 
 	:global(.navbar .nav-item) {
 		padding-left: 2rem;
@@ -108,6 +114,13 @@
 		font-weight: 600;
 		font-size: 1.5rem;
 		color: white;
+		text-decoration: none;
+	}
+	
+	:global(.navbar .nav-link:hover) {
+		color: white;
+		text-decoration: underline;
+		scale: 1;
 	}
 
 	:global(.navbar .nav-item .btn) {

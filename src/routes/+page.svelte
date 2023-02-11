@@ -2,15 +2,15 @@
 	import Counter from '$lib/components/Counter.svelte';
 	import PostView from '$lib/components/PostView.svelte';
 	import { Container } from 'sveltestrap';
-	import type { PageData } from './$types';
 	import headerData from '$lib/stores/headerData';
 	import background from '$lib/images/blurry-gradient-haikei.svg';
-
-	$headerData.title = "TyBlog";
-	$headerData.subtitle = "A home for Tyler's thoughts";
-	$headerData.background = background;
+	import type { PageData } from './$types';
 
 	export let data: PageData;
+
+	$headerData.title = 'TyBlog';
+	$headerData.subtitle = "A home for Tyler's thoughts";
+	$headerData.background = background;
 </script>
 
 <svelte:head>
@@ -20,14 +20,12 @@
 
 <section>
 	<Container class="text-center my-5">
-		<h1>
-			Hello, World!
-		</h1>
-	
+		<h1>Hello, World!</h1>
+
 		<p>This is just a place for me to document my journey as a developer.</p>
 	</Container>
 
-	<PostView header={"Recent Posts"} data={data.posts}/>
+	<PostView header={'Recent Posts'} data={data.posts} />
 
 	<Counter />
 </section>
