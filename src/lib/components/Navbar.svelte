@@ -66,9 +66,6 @@
 			<NavItem><NavLink href="/blog">Blog</NavLink></NavItem>
 			{#if $authStore.user}
 				<NavItem>
-					<NavLink href="/admin">Admin</NavLink>
-				</NavItem>
-				<NavItem>
 					<Button outline on:click={logOut} color="light">Logout</Button>
 				</NavItem>
 			{/if}
