@@ -6,10 +6,8 @@
 
 	$headerData.title = 'Create Post';
 	$headerData.subtitle = 'Create a new blog post';
-
-	
 </script>
 
 <Container>
-	<EditBlog on:createBlog={createBlogPost} title={""} subtitle={""} content={""}/>
+	<EditBlog on:submitBlog={createBlogPost} title={""} subtitle={""} content={""}/>
 </Container>

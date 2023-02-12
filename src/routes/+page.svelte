@@ -26,8 +26,6 @@
 	</Container>
 
 	<PostView header={'Recent Posts'} data={data.posts} />
-
-	<Counter />
 </section>
 
 <style>

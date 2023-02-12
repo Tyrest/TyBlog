@@ -30,6 +30,7 @@ export async function getBlogPost(id: string): Promise<{ id: string; data: () =>
 }
 
 export async function createBlogPost(event: CustomEvent<{ title: string, subtitle: string, content: string }>) {
+    console.log(event.detail);
     if (!auth.currentUser) {
         console.error('User not logged in');
         return;
