@@ -4,7 +4,7 @@
 			<div class="col-md-10 col-lg-8 mx-auto">
 				<ul class="list-inline text-center">
 					<li class="list-inline-item">
-						<a href="https://www.linkedin.com/in/tyler-ho-7bab25214/">
+						<a href="https://www.linkedin.com/in/tyler-ho-dev/">
 							<span class="fa-stack fa-lg">
 								<i class="fa fa-circle fa-stack-2x" />
 								<i class="fa fa-linkedin fa-stack-1x fa-inverse" />

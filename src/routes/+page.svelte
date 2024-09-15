@@ -3,7 +3,7 @@
 	import PostView from '$lib/components/PostView.svelte';
 	import { Container } from 'sveltestrap';
 	import headerData from '$lib/stores/headerData';
-	import background from '$lib/images/blurry-gradient-haikei.svg';
+	import background from '$lib/images/blob-scene-haikei.svg';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
